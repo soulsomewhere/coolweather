@@ -1,6 +1,7 @@
 package com.collweather.app.activity;
 
 import com.collweather.app.R;
+import com.collweather.app.service.AutoUpdateService;
 import com.collweather.app.util.HttpCallbackListener;
 import com.collweather.app.util.HttpUtil;
 import com.collweather.app.util.Utility;
@@ -175,8 +176,8 @@ private void showWeather() {
 	currentDateText.setText(prefs.getString("current_date", ""));
 	weatherInfoLayout.setVisibility(View.VISIBLE);
 	cityNameText.setVisibility(View.VISIBLE);
-//	Intent intent = new Intent(this, AutoUpdateService.class);
-//	startService(intent);
+	Intent intent = new Intent(this, AutoUpdateService.class);
+	startService(intent);//¼¤»î·þÎñ
 }
 
 }
